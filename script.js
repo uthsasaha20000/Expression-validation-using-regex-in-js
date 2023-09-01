@@ -18,15 +18,23 @@ emailButton.addEventListener('click', function() {
   emailForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
-    let userInput = inputField.value;
+
     re=/^\w+@[a-zA-Z\d]+\.[a-zA-Z]{3}$/;
 
-    if(re.test(userInput)) {
+    if(re.test(inputField.value)) {
             alert('It is valid email.');
-     }  
+            inputField.value='';
+            return;
+     }
+     else if(inputField.value=="")
+     {
+        return;
+     }
 
     else{
             alert('Sorry,it is not a valid email');
+            inputField.value='';
+            return;
         }
    });
 });
@@ -44,12 +52,20 @@ phoneButton.addEventListener('click', function() {
         let userInput = inputField.value;
         re=/^\+8801\d{9}|^01\d{9}$/;
     
-        if(re.test(userInput)) {
+        if(re.test(inputField.value)) {
                 alert('It is valid phone.');
+                inputField.value='';
+                return;
          }  
+         else if(inputField.value=="")
+         {
+            return;
+         }
     
         else{
                 alert('Sorry,it is not a valid phone');
+                inputField.value='';
+                return;
             }
             
     
@@ -65,16 +81,22 @@ postCodeButton.addEventListener('click', function() {
   postForm.style.display = 'block';
    postForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    
-    let userInput = inputField.value;
     re=/^\d{4}$/;
 
-    if(re.test(userInput)) {
+    if(re.test(inputField.value)) {
             alert('It is valid post code.');
-     }  
+            inputField.value='';
+            return;
+     } 
+     else if(inputField.value=="")
+     {
+        return;
+     } 
 
     else{
-            alert('Sorry,it is not a post code');
+            alert('Sorry,it is not a valid post code');
+            inputField.value='';
+            return;
         }
   
   });
