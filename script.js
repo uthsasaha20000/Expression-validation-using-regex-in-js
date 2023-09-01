@@ -3,72 +3,85 @@
 var emailButton = document.getElementById('email');
 var phoneButton = document.getElementById('phone');
 var postCodeButton = document.getElementById('post-code');
-var myForm = document.getElementById('myForm');
+var emailForm = document.getElementById('emailForm');
+var phoneForm = document.getElementById('phoneForm');
+var postForm = document.getElementById('postForm');
 
-// Add event listeners to buttons
+
+
 emailButton.addEventListener('click', function() {
-  showForm('Email');
+    let inputField = document.getElementById('emailinput');
+  let submitButton = document.getElementById('emailsubmit');
+    emailForm.style.display = 'block';
+    phoneForm.style.display = 'none';
+    postForm.style.display = 'none';
+  emailForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    let userInput = inputField.value;
+    re=/^\w+@[a-zA-Z\d]+\.[a-zA-Z]{3}$/;
+
+    if(re.test(userInput)) {
+            alert('It is valid email.');
+     }  
+
+    else{
+            alert('Sorry,it is not a valid email');
+        }
+   });
 });
 
 phoneButton.addEventListener('click', function() {
-  showForm('Phone');
+    let inputField = document.getElementById('phoneinput');
+    let submitButton = document.getElementById('phonesubmit');
+    emailForm.style.display = 'none';
+    phoneForm.style.display = 'block';
+    postForm.style.display = 'none';
+
+      phoneForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        let userInput = inputField.value;
+        re=/^\+8801\d{9}|^01\d{9}$/;
+    
+        if(re.test(userInput)) {
+                alert('It is valid phone.');
+         }  
+    
+        else{
+                alert('Sorry,it is not a valid phone');
+            }
+            
+    
+        
+      });
 });
 
 postCodeButton.addEventListener('click', function() {
-  showForm('Post Code');
-});
- // Set the form placeholder and display the form
-function showForm(type) {
- 
-  var inputPlaceholder = 'Enter ' + type;
-  var Type=type;
-  var inputField = document.getElementById('input');
-  var submitButton = document.getElementById('submit');
-
-  inputField.placeholder = inputPlaceholder;
-  myForm.style.display = 'block';
-
-  // Prevent the default form submission
-  myForm.addEventListener('submit', function(e) {
+  let inputField = document.getElementById('postinput');
+  let submitButton = document.getElementById('postsubmit');
+  emailForm.style.display = 'none';
+  phoneForm.style.display = 'none';
+  postForm.style.display = 'block';
+   postForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    var userInput = inputField.value;
-    let str;
-    switch (Type) {
-        case 'Email':
-        re=/^\w+@[a-zA-Z\d]+\.[a-zA-Z]{3}$/;
-        if(re.test(userInput)) {
-            alert('It is valid email.');
-        }
-        else{
-            alert('Sorry,it is not a valid email');
-        }
-          break;
-        case 'Phone':
-            re=/^\+8801\d{9}|^01\d{9}$/;
-            if(re.test(userInput)) {
-                alert('It is valid Bangladeshi phone number.');
-            }
-            else{
-                alert('Sorry,it is not a valid Bangladeshi phone number');
-            }
-          break;
-        case 'Post Code':
-            re=/^\d{4}$/;
-            if(re.test(userInput)) {
-                alert('It is valid post code.');
-            }
-            else{
-                alert('Sorry,it is not a valid post');
-            }
-          break;
-        
-         
-      }
     
+    let userInput = inputField.value;
+    re=/^\d{4}$/;
 
-    
+    if(re.test(userInput)) {
+            alert('It is valid post code.');
+     }  
+
+    else{
+            alert('Sorry,it is not a post code');
+        }
+  
   });
+});
+ 
 
 
-}
+
+
     
