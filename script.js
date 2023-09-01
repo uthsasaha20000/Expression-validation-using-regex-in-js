@@ -17,10 +17,11 @@ phoneButton.addEventListener('click', function() {
 postCodeButton.addEventListener('click', function() {
   showForm('Post Code');
 });
-
+ // Set the form placeholder and display the form
 function showForm(type) {
-  // Set the form placeholder and display the form
+ 
   var inputPlaceholder = 'Enter ' + type;
+  var Type=type;
   var inputField = document.getElementById('input');
   var submitButton = document.getElementById('submit');
 
@@ -31,10 +32,27 @@ function showForm(type) {
   myForm.addEventListener('submit', function(e) {
     e.preventDefault();
     var userInput = inputField.value;
+    validate(Type);
+    
 
-    // Here you can add your regex validation logic for the user input
-
-    console.log('User input:', userInput);
+    
   });
+
+  function validate(a)
+  {
+    switch (a) {
+        case 'Email':
+        
+          break;
+        case 'Phone':
+          
+          break;
+        case 'Post Code':
+        
+          break;
+        
+         
+      }
+  }
 }
     
