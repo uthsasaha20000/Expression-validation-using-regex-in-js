@@ -32,27 +32,43 @@ function showForm(type) {
   myForm.addEventListener('submit', function(e) {
     e.preventDefault();
     var userInput = inputField.value;
-    validate(Type);
+    let str;
+    switch (Type) {
+        case 'Email':
+        re=/^\w+@[a-zA-Z\d]+\.[a-zA-Z]{3}$/;
+        if(re.test(userInput)) {
+            alert('It is valid email.');
+        }
+        else{
+            alert('Sorry,it is not a valid email');
+        }
+          break;
+        case 'Phone':
+            re=/^\+8801\d{9}|^01\d{9}$/;
+            if(re.test(userInput)) {
+                alert('It is valid Bangladeshi phone number.');
+            }
+            else{
+                alert('Sorry,it is not a valid Bangladeshi phone number');
+            }
+          break;
+        case 'Post Code':
+            re=/^\d{4}$/;
+            if(re.test(userInput)) {
+                alert('It is valid post code.');
+            }
+            else{
+                alert('Sorry,it is not a valid post');
+            }
+          break;
+        
+         
+      }
     
 
     
   });
 
-  function validate(a)
-  {
-    switch (a) {
-        case 'Email':
-        
-          break;
-        case 'Phone':
-          
-          break;
-        case 'Post Code':
-        
-          break;
-        
-         
-      }
-  }
+
 }
     
