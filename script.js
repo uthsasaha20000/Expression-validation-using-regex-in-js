@@ -10,6 +10,9 @@ var postForm = document.getElementById('postForm');
 
 
 emailButton.addEventListener('click', function() {
+    emailButton.style.backgroundColor = 'red';
+    phoneButton.style.backgroundColor='blue';
+    postCodeButton.style.backgroundColor='blue';
     let inputField = document.getElementById('emailinput');
   let submitButton = document.getElementById('emailsubmit');
     emailForm.style.display = 'block';
@@ -40,6 +43,9 @@ emailButton.addEventListener('click', function() {
 });
 
 phoneButton.addEventListener('click', function() {
+    emailButton.style.backgroundColor = 'blue';
+    phoneButton.style.backgroundColor='red';
+    postCodeButton.style.backgroundColor='blue';
     let inputField = document.getElementById('phoneinput');
     let submitButton = document.getElementById('phonesubmit');
     emailForm.style.display = 'none';
@@ -74,6 +80,9 @@ phoneButton.addEventListener('click', function() {
 });
 
 postCodeButton.addEventListener('click', function() {
+    emailButton.style.backgroundColor = 'blue';
+    phoneButton.style.backgroundColor='blue';
+    postCodeButton.style.backgroundColor='red';
   let inputField = document.getElementById('postinput');
   let submitButton = document.getElementById('postsubmit');
   emailForm.style.display = 'none';
