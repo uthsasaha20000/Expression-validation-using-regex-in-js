@@ -1,11 +1,15 @@
-# Contents
+# Introduction
+The regex concept of javascript will be implemented in order to validate email,phone number and post code.
 
-- Implementation of Regex using js.
-- [Email validation](#email-validation)
-- [Phone validation](#phone-validation)
-- [Post Code validation](#post-code-validation)
+# Contents implemented
+- Regex using js.
+    - [Email validation](#email-validation)
+    - [Phone validation](#phone-validation)
+    - [Post Code validation](#post-code-validation)
+- Css animation
+    - Animation has been added to make the front end attractive
 
-# Here,Regex implemented using javascript and also implemented little bit css animation.
+
 # Email Validation
 - Email will be validated using regex
 
